@@ -62,5 +62,10 @@ namespace SocialMedia.Repository.Repository
             i = await _context.SaveChangesAsync();
             return i;
         }
+
+        public async Task<bool> CategoryNameExist(string packageName)
+        {
+            return await _context.MasterCategory.AnyAsync(x => x.Name.ToLower() == packageName.ToLower() && x.IsDeleted == false);
+        }
     }
 }

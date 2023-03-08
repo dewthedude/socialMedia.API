@@ -53,7 +53,7 @@ namespace SocialMedia.Controllers.PackageController
         [HttpPost]
         public async Task<ActionResult<Response<string>>> AddCategory([FromForm] CategoryModel req, CancellationToken cancellationToken)
         {
-            var res = await _packageService.AddCategory(req.Name);
+            var res = await _packageService.AddCategory(req.Name, req.Icon);
 
             if (res.Succeeded)
             {

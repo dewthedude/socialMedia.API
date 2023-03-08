@@ -14,5 +14,6 @@ namespace SocialMedia.Repository.Interfaces
         Task<List<MasterCategory>> GetCategoryDropdownAsync();
         Task<MasterCategory> GetCategoryByIdAsync(Guid id);
         Task<int> UpdateCategoryAsync(MasterCategory res);
+        Task<bool> CategoryNameExist(string packageName);
     }
 }

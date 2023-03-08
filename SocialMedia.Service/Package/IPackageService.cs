@@ -10,7 +10,7 @@ namespace SocialMedia.Service.Package
 {
     public interface IPackageService
     {
-        Task<Response<string>> AddCategory(string packageName);
+        Task<Response<string>> AddCategory(string packageName, string? icon);
         Task<Response<List<PackageMasterResponse>>> GetPackageCategory();
         Task<Response<List<PackageMasterResponse>>> GetCategoryDropdown();
         Task<Response<string>> AddSubCategory(Guid categoryId, string subCategory);

@@ -18,14 +18,24 @@ namespace SocialMedia.Service.Package
             _masterFeatureRepository = masterFeatureRepository;
         }
         int i = 0;
-        public async Task<Response<string>> AddCategory(string packageName)
+        public async Task<Response<string>> AddCategory(string packageName, string icon)
         {
+            var isExist = await _packageCategoryRepository.CategoryNameExist(packageName);
+            if (isExist)
+            {
+                return new Response<string>
+                {
+                    Message = packageName + " " + ResponseMessage.AlreadyExist,
+                    Succeeded = false
+                };
+            }
             MasterCategory packageCategory = new MasterCategory
             {
                 Name = packageName,
                 CreatedOnUtc = DateTime.Now,
                 Description = packageName,
                 Id = Guid.NewGuid(),
+                Icon = icon,
                 IsActive = false,
                 IsDeleted = false,
                 ModifiedOnUtc = DateTime.Now,

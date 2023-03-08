@@ -16,5 +16,6 @@ namespace SocialMedia.Service.CommonModels
         public static string InvalidId = "Please provide valid Id";
         public static string UpdateSuccess = "Updaed successfully";
         public static string UpdateFailed = "Failed to update";
+        public static string AlreadyExist = "Already exist";
     }
 }
