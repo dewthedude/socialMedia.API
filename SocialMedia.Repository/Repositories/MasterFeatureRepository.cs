@@ -31,10 +31,21 @@ namespace SocialMedia.Repository.Repositories
             return await _context.MasterFeature.Include(x => x.masterSubCategory).ToListAsync();
         }
 
+        public async Task<MasterFeatures> GetFeatrueById(Guid id)
+        {
+            return await _context.MasterFeature.FindAsync(id);
+        }
+
         public async Task<List<MasterFeatures>> GetPackageDetails()
         {
             var res = await _context.MasterFeature.Include(x => x.masterSubCategory).ThenInclude(a => a.masterCategory).ToListAsync();
             return res;
+        }
+
+        public async Task<int> UpdateFeatureAsync(MasterFeatures res)
+        {
+            _context.MasterFeature.Update(res);
+            return await _context.SaveChangesAsync();
         }
     }
 }

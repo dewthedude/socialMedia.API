@@ -8,6 +8,7 @@ using SocialMedia.Shared.ResponseModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,17 @@ namespace SocialMedia.Repository.Repositories
         public async Task<bool> ExistSubCategoryId(Guid Id)
         {
             return await _context.MasterSubCategory.AnyAsync(x => x.Id == Id);
+        }
+
+        public async Task<MasterSubCategory> GetSubCategoryById(Guid id)
+        {
+            return await _context.MasterSubCategory.FindAsync(id);
+        }
+
+        public async Task<int> UpdateSubCategoryAsync(MasterSubCategory res)
+        {
+            _context.MasterSubCategory.Update(res);
+            return await _context.SaveChangesAsync();
         }
     }
 }

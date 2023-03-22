@@ -12,7 +12,7 @@ namespace SocialMedia.Shared.ResponseModel
         public Guid CategoryId { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public DateTime ModifiedOnUtc { get; set; }
-
+        public string? Icon { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public bool IsActive { get; set; }
@@ -20,9 +20,11 @@ namespace SocialMedia.Shared.ResponseModel
     }
     public class PackageSubCategoryResponse
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
-
+        public string? Icon { set; get; }   
         public string PackageName { get; set; }
+        public bool IsActive { get; set; }    
         public DateTime CreatedOnUtc { get; set; }
         public DateTime ModifiedOnUtc { get; set; }
     }
@@ -35,7 +37,9 @@ namespace SocialMedia.Shared.ResponseModel
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string SubCategory { get; set; }
+        public string? Icon { set; get; }    
+        public string? SubCategory { get; set; }
+        public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdateDate { get; set; }
 

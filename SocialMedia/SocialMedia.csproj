@@ -22,4 +22,8 @@
     <ProjectReference Include="..\SocialMedia.Shared\SocialMedia.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\MasterController\DTO\" />
+  </ItemGroup>
+
 </Project>

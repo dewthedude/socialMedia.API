@@ -13,6 +13,7 @@ namespace SocialMedia.Repository.Interfaces
         Task<List<MasterSubCategory>> GetSubCategoryAsync();
         Task<List<MasterSubCategory>> GetSubCategoryDropdownAsync();
         Task<bool> ExistSubCategoryId(Guid Id);
-
+        Task<MasterSubCategory> GetSubCategoryById(Guid id);
+        Task<int> UpdateSubCategoryAsync(MasterSubCategory res);
     }
 }
