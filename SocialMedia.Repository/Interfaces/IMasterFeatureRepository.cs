@@ -12,6 +12,8 @@ namespace SocialMedia.Repository.Interfaces
     {
         Task<int> AddMaasterFeatureAsync(MasterFeatures req);
         Task<List<MasterFeatures>> GetCategoryFutureListAsync();
+        Task<MasterFeatures> GetFeatrueById(Guid id);
         Task<List<MasterFeatures>> GetPackageDetails();
+        Task<int> UpdateFeatureAsync(MasterFeatures res);
     }
 }
